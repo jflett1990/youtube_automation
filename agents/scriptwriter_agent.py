@@ -1,7 +1,7 @@
 # scriptwriter_agent.py
 import autogen
 from utilities.local_content_manager import LocalContentManager
-
+from utilities.script_generator import YouTubeScriptGenerator
 class ExtendedScriptwriterAgent(autogen.AssistantAgent):
     def __init__(self, name, llm_config):
         super().__init__(name, llm_config, system_message="As a Script_Writer Agent, your role is to synthesize gathered information into scripts that are both entertaining and informative, capable of weaving narratives and connecting complex ideas into comprehensive and engaging content. Here are your system instructions:
