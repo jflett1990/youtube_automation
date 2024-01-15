@@ -16,6 +16,29 @@ user_proxy = autogen.UserProxyAgent(
     human_input_mode="TERMINATE"
 )
 
+researcher = ExtendedResearcherAgent("Researcher", llm_config)
+scriptwriter = ExtendedScriptwriterAgent("Scriptwriter", llm_config)
+video_editor = VideoEditorAgent("Video_Editor", llm_config, "play_ht_api_key", "play_ht_user_id")
+expert_youtuber = ExpertYoutuberAgent("Expert_Youtuber", llm_config)
+quality_control = QualityControlAgent("Quality_Control", llm_config)
+
+agents = [user_proxy, expert_youtuber, researcher, scriptwriter, video_editor, quality_control]
+groupchat = autogen.GroupChat(agents=agents, messages=[], max_round=12)
+
+manager = autogen.GroupChatManager(groupchat=groupchat, llm_config=llm_config)
+
+if name == "main":
+# Example script generation process
+script_gen = YouTubeScriptGenerator()
+script_gen.add_script_part("Introduction: Discussing the latest in AI technology.")
+script_gen.add_script_part("Body: Detailed exploration of GPT-4 capabilities.")
+script_gen.add_script_part("Conclusion: The future of AI and its implications.")
+complete_script = script_gen.generate_script()
+print(complete_script)
+
+
+
+
 # Define the Expert Youtuber Agent (example initialization)
 expert_youtuber = autogen.AssistantAgent(
     name="Expert_Youtuber",
