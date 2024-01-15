@@ -1,0 +1,33 @@
+class YouTubeScriptGenerator:
+    def __init__(self):
+        self.script_parts = []
+
+    def add_script_part(self, text: str):
+        """
+        Adds a custom part to the script.
+
+        :param text: A string containing a part of the script (e.g., introduction, point, conclusion)
+        """
+        self.script_parts.append(text)
+
+    def generate_script(self) -> str:
+        """
+        Generates the final script by concatenating all added parts.
+
+        :return: A string containing the complete script.
+        """
+        return '\n\n'.join(self.script_parts)
+
+# Example usage
+if __name__ == "__main__":
+    script_generator = YouTubeScriptGenerator()
+
+    # Agents dynamically add their own segments
+    script_generator.add_script_part("Introduction: [Agent's own introduction]")
+    script_generator.add_script_part("Point 1: [Agent's own content]")
+    script_generator.add_script_part("Point 2: [Agent's own content]")
+    script_generator.add_script_part("Conclusion: [Agent's own conclusion]")
+
+    # Generate and print the complete script
+    complete_script = script_generator.generate_script()
+    print(complete_script)
