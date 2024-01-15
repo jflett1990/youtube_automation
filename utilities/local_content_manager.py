@@ -13,4 +13,15 @@ class LocalContentManager:
     def save_content(self, content_type, file_name, content):
         path = os.path.join(self.base_path, content_type, file_name)
         with open(path, 'w') as file:
-            if content_type ==
+            if content_type =='articles' or content_type == 'scripts':
+file.write(content)
+else:
+file.write(json.dumps(content))
+
+def get_content(self, content_type, file_name):
+    path = os.path.join(self.base_path, content_type, file_name)
+    with open(path, 'r') as file:
+        if content_type == 'articles' or content_type == 'scripts':
+            return file.read()
+        else:
+            return json.loads(file.read())
