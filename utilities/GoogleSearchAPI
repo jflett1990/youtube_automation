@@ -1,3 +1,4 @@
+from typing import List, Dict
 import requests
 import os
 from dotenv import load_dotenv
@@ -43,14 +44,10 @@ class GoogleSearchAPI:
 
         return formatted_results
 
-# Example usage of the class
 if __name__ == "__main__":
     google_search = GoogleSearchAPI()
     try:
-        results = google
-    _search.search("Latest technology trends")
-for result in results:
-print(f"Title: {result['title']}\nURL: {result['url']}\nSnippet: {result['snippet']}\n")
-except Exception as e:
+        # The 'google_search' object reference should be consistent.
+        results = google_search.search
 print(str(e))
                                                    
