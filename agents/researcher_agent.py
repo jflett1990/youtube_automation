@@ -40,4 +40,8 @@ Your role is crucial in ensuring that the information and insights provided are 
 ")
         self.content_manager = LocalContentManager()
 
-        # Additional methods specific to the Researcher Agent
+        def research_topic(self, topic):
+        # Implement research logic here
+        research_content = "Researched content on " + topic
+        self.content_manager.save_content('research', topic + '.txt', research_content)
+        return research_content
