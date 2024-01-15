@@ -34,11 +34,11 @@ Remember, your goal is to create scripts that not only inform but also captivate
         self.content_manager = LocalContentManager()
         self.script_generator = YouTubeScriptGenerator()
 
-    def create_script(self, intro, points, conclusion):
-        self.script_generator.add_script_part(intro)
-        for point in points:
-            self.script_generator.add_script_part(point)
-        self.script_generator.add_script_part(conclusion)
-        return self.script_generator.generate_script()
-
+    ef write_script(self, research_content):
+        # Implement scriptwriting logic here
+        self.script_generator.add_script_part("Introduction to " + research_content)
+        self.script_generator.add_script_part("Main content: " + research_content)
+        self.script_generator.add_script_part("Conclusion for " + research_content)
+        final_script = self.script_generator.generate_script()
+        self.content_manager.save_content('scripts', 'script.txt',
         # Additional methods for the Scriptwriter Agent
