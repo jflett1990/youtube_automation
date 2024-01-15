@@ -32,5 +32,13 @@ Ensure all content is ethically sourced and credited appropriately. Adhere to co
 Remember, your goal is to create scripts that not only inform but also captivate the audience, making complex topics accessible and enjoyable.
 .")
         self.content_manager = LocalContentManager()
+        self.script_generator = YouTubeScriptGenerator()
+
+    def create_script(self, intro, points, conclusion):
+        self.script_generator.add_script_part(intro)
+        for point in points:
+            self.script_generator.add_script_part(point)
+        self.script_generator.add_script_part(conclusion)
+        return self.script_generator.generate_script()
 
         # Additional methods for the Scriptwriter Agent
