@@ -40,5 +40,6 @@ Remember, your goal is to create scripts that not only inform but also captivate
         self.script_generator.add_script_part("Main content: " + research_content)
         self.script_generator.add_script_part("Conclusion for " + research_content)
         final_script = self.script_generator.generate_script()
-        self.content_manager.save_content('scripts', 'script.txt',
+        self.content_manager.save_content('scripts', 'script.txt',final_script)
+return final_script
         # Additional methods for the Scriptwriter Agent
